@@ -31,7 +31,7 @@ jobs:
         uses: hashicorp/setup-terraform@v4
 
       - name: Assuming federated role
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           aws-region: ${{ vars.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_FED_ROLE_ARN }}
