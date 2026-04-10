@@ -1,0 +1,326 @@
+{
+	"global": {
+		"addBtn": "Add",
+		"editBtn": "Save changes",
+		"editIcon": "Edit",
+		"deleteIcon": "Delete",
+		"redirectBtn": "Return",
+		"statusChange": "Change satus",
+		"next": "Next",
+		"previous": "Previous",
+		"excel": "Extract excel",
+		"cash": "Cash",
+		"cashless": "Cashless",
+		"payment": "Payment method",
+		"cannotDelete": "Can delete only new orders!",
+		"initialPrice": "Initial Price",
+		"modal": {
+			"deleteTxt": "Are you sure?",
+			"deleteBtn": "Delete",
+			"cancelBtn": "Cancel",
+			"deleting": "Deleting...",
+			"confirmBtn": "Confirm"
+		},
+		"search": {
+			"placeholder": "Search",
+			"searchBtn": "Clear"
+		},
+
+		"switcher": {
+			"on": "Active",
+			"off": "Inactive"
+		},
+		"errors": {
+			"unknown": "Something went wrong"
+		}
+	},
+	"home": {
+		"btn": "Sign in"
+	},
+	"sheet": {
+		"sheetTitle": "List",
+		"logoutBtn": "Log out",
+		"navLink": {
+			"order": "Orders",
+			"user": "Users",
+			"shop": "Shops",
+			"category": "Categories",
+			"product": "Products",
+			"import": "Import"
+		}
+	},
+	"loginForm": {
+		"title": "Login to your account",
+		"userName": "User Name",
+		"password": "Password",
+		"loginBtn": "Login",
+		"loggingInBtn": "Logging in...",
+		"usernamePlaceholder": "Enter your username",
+		"passwordPlaceholder": "Enter your password"
+	},
+	"user": {
+		"table": {
+			"tableTitle": "Registered Users",
+			"row": {
+				"name": "Name, surname",
+				"username": "Username",
+				"role": "Role",
+				"caption": "List of users"
+			}
+		},
+
+		"form": {
+			"addTitle": "Add New User",
+			"editTitle": "Edit User Data",
+			"namePlaceholder": "Name, surname",
+			"usernamePlaceholder": "Username",
+			"userPassPlaceholder": "Password",
+			"rolePlaceholder": "Role",
+			"label": {
+				"name": "Name, Surname",
+				"username": "Username",
+				"password": "Password"
+			},
+			"role": {
+				"admin": "Admin",
+				"manager": "Manager"
+			},
+			"saveBtn": "Save",
+			"savingBtn": "Saving..."
+		},
+		"error": {
+			"notFound": "User is not found",
+			"emailExists": "Email already exists",
+			"invalidRole": "Invalid Role",
+			"invalidStatus": "Invalid status",
+			"missingFields": "Please fill all required fields",
+			"invalidId": "Invalid ID",
+			"cannotDeleteSelf": "Impossible to delete",
+			"cannotModifyAdmin": "Impossible to modify",
+			"insufficientPermissions": "Permission denied"
+		}
+	},
+	"shop": {
+		"table": {
+			"title": "Shop List",
+			"assign": "Assign shop",
+			"row": {
+				"code": "Code",
+				"name": "Name",
+				"vat": "TIN",
+				"phone": "Phone",
+				"address": "Address",
+				"caption": "List of your shops"
+			}
+		},
+		"form": {
+			"addTitle": "Add New Shop",
+			"editTitle": "Edit Shop Data",
+			"namePH": "Shop name",
+			"codePH": "Shop code",
+			"addressPH": "Shop address",
+			"phonePH": "Phone",
+			"vatPH": "TIN",
+			"label": {
+				"name": "Shop Name",
+				"code": "Shop Code",
+				"address": "Shop Address",
+				"phone": "Shop Phone",
+				"vat": "Shop TIN",
+				"status": "Shop Status"
+			}
+		},
+		"assignedShopTitle": "Assigned shops",
+
+		"error": {
+			"notFound": "Shop is not found",
+			"codeExists": "Code exists",
+			"invalidStatus": "Invalid status",
+			"missingFields": "Please fill the required fileds",
+			"invalidId": "Invalid ID",
+			"invalidVat": "Invalid TIN",
+			"invalidFileType": "File is not valid",
+			"validationError": "Validation Error",
+			"emptyFile": "File is empty",
+			"fileNotFound": "File is not found"
+		}
+	},
+	"category": {
+		"table": {
+			"title": "List of Categories",
+			"row": {
+				"name": "Category Title",
+				"caption": "List of categories"
+			}
+		},
+		"form": {
+			"addTitle": "Add New Category",
+			"editTitle": "Edit Category",
+			"namePlaceholder": "Fill a category",
+			"label": "Category",
+			"categoryAll": "All"
+		},
+		"error": {
+			"notFound": "Category is not found",
+			"invalidId": "Invalid ID",
+			"missingFields": "Please fill all required fields",
+			"parentNotFound": "Not found",
+			"circularReference": "Invalid reference",
+			"cannotDeleteWithChildren": "Unable to delete",
+			"cannotMoveToChild": "Unable to move"
+		}
+	},
+	"product": {
+		"byCategory": "Select Product by Category",
+		"table": {
+			"title": "List of Products",
+			"row": {
+				"name": "Product Title",
+				"code": "Code",
+				"measurement": "Measurement",
+				"price": "Price",
+				"category": "Category"
+			}
+		},
+		"form": {
+			"addTitle": "Add New Product",
+			"editTitle": "Edit Product",
+			"namePH": "Fill product title",
+			"codePH": "Fill product code",
+			"categoryPH": "Product category",
+			"measureMentPH": "Fill unit of measurement",
+			"pricePH": "Fill product price",
+			"caption": "List of your products",
+			"label": {
+				"name": "Product Title",
+				"code": "Product Code",
+				"category": "Product Category",
+				"measurement": "Product Measurement",
+				"price": "Product Price"
+			}
+		},
+		"measurement": {
+			"piece": "Piece",
+			"kg": "Kg",
+			"meter": "Meter",
+			"liter": "Liter"
+		}
+	},
+	"auth": {
+		"error": {
+			"invalidCredentials": "Invalid Credentials",
+			"userInactive": "Iactive User",
+			"missingCredentials": "Missing Credentials",
+			"unauthorized": "Unauthorized",
+			"tokenMissing": "Session Expired",
+			"tokenInvalid": "Invalid Token"
+		}
+	},
+
+	"errors": {
+		"auth": {
+			"missingField": "Please fill the field",
+			"passwordError": "Please fill the field (at least 8 caracters)"
+		},
+		"users": {
+			"zod": {
+				"name": "Name, surname are required",
+				"username": "Username is required",
+				"role": "Role is required",
+				"status": "Status is required",
+				"passwordRequired": "Password is required",
+				"passwordMin": "Password must contain at least 8 characters"
+			}
+		},
+		"shops": {
+			"zod": {
+				"code": "Code is required",
+				"name": "Name is required",
+				"address": "Address is required",
+				"status": "Status required"
+			}
+		},
+		"product": {
+			"zod": {
+				"name": "Name is required",
+				"code": "Code is required",
+				"measurement": "Applunit of measurement",
+				"category": "Apply Category",
+				"price": "Price is required",
+				"positivePrice": "Price should be a positive number",
+				"priceType": "Must be a number"
+			}
+		}
+	},
+	"import": {
+		"title": "Import Data",
+		"userTitle": "Users",
+		"shopTitle": "Shops",
+		"categoryTitle": "Categories",
+		"productTitle": "Products",
+		"importBtn": "Import"
+	},
+	"order": {
+		"addBtn": "Create new order",
+		"title": "Order List",
+		"previewTitle": "Order Preview",
+		"categoryBtn": "Select another category",
+		"submitOrder": "Submit Order",
+		"productBtn": "Products",
+		"previewBtn": "View Order",
+		"assignedShops": "Assigned shops",
+		"increaseBtn": "Increase quantity",
+		"decreaseBtn": "Decrease quantity",
+		"noOrder": "No orders yet",
+		"filterByStatus": "Filter orders",
+
+		"table": {
+			"name": "Shop Name",
+			"address": "Shop Address",
+			"caption": "List of Orders",
+			"total": "Total amount",
+			"date": "Creation Date",
+			"managerName": "Manager name",
+			"number": "Order Nuber"
+		},
+		"filter": "Filter by manager name",
+		"popup": {
+			"title": "Create Order",
+			"price": "Price",
+			"quantity": "Quantity",
+			"total": "Total"
+		},
+		"details": {
+			"title": "Order Details",
+			"number": "Order Nuber",
+			"deleteBtn": "Delete Order"
+		},
+		"error": {
+			"notFound": "Order is not found",
+			"invalidId": "Invalid ID",
+			"missingFields": "Please fill all required fields",
+			"shopNotAssigned": "Shop is not assigned",
+			"shopNotFound": "Shop is no found",
+			"shopInactive": "Shop is not active",
+			"productNotFound": "Product is not found",
+			"invalidQuantity": "Invalid quantity",
+			"emptyItems": "Empty items",
+			"invalidStatus": "Invalid status",
+			"cannotModifyStatus": "Cannot modify status",
+			"unauthorizedShop": "Unauthorized, access denied"
+		}
+	},
+	"print": {
+		"payer": "Payer",
+		"createdAt": "Order Creation Date",
+		"address": "Addres to deliver",
+		"vat": "VAT",
+		"measurement": "Unit",
+		"preview": "Print",
+		"printed": "Printed",
+		"delivered": "Delivered",
+		"deliver": "Deliver",
+		"markAsPrinted": "Mark as printed",
+		"new": "New"
+	}
+}

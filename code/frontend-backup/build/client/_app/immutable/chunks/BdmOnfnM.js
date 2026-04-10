@@ -1,0 +1,1 @@
+import{u as a}from"./BAAk9K8d.js";const m=async(d,o)=>{const s=d.items.filter(t=>t.productId!==o),e=s.reduce((t,u)=>t+(u.total??0),0),n={...d,items:s,totalAmount:e},p={shopId:d.shopId,items:s.map(t=>({productId:t.productId,quantity:t.quantity})),notes:d.notes??""};return await a(p,d.id),n};export{m as d};

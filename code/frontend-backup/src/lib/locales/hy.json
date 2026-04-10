@@ -1,0 +1,349 @@
+{
+	"global": {
+		"addBtn": "Ավելացնել",
+		"editBtn": "Պահպանել փոփոխությունները",
+		"editIcon": "Խմբագրել",
+		"deleteIcon": "Ջնջել",
+		"redirectBtn": "Վերադառնալ",
+		"statusChange": "Փոխել կարգավիճակը",
+		"next": "Հաջորդ",
+		"previous": "Նախորդ",
+		"excel": "Բեռնել excel տարբերակը",
+		"cash": "Կանխիկ",
+		"cashless": "Փոխանցումով",
+		"payment": "Վճարման եղանակը",
+		"cannotDelete": "Հնարավոր է ջնջել միայն նոր պատվերները։",
+		"initialPrice": "Սկզբնարժեք",
+
+		"modal": {
+			"deleteTxt": "Համոզվա՞ծ եք։",
+			"deleteBtn": "Ջնջել",
+			"cancelBtn": "Չեղարկել",
+			"deleting": "Մշակվում է․․․",
+			"confirmBtn": "Հաստատել"
+		},
+		"search": {
+			"placeholder": "Փնտրել",
+			"searchBtn": "Մաքրել"
+		},
+
+		"switcher": {
+			"on": "Ակտիվ",
+			"off": "Կասեցված"
+		},
+		"errors": {
+			"unknown": "Տեղի է ունեցել սխալ"
+		}
+	},
+	"home": {
+		"btn": "Մուտք գործել համակարգ"
+	},
+	"sheet": {
+		"sheetTitle": "Ցանկ",
+		"logoutBtn": "Դուրս գալ համակարգից",
+		"navLink": {
+			"order": "Պատվերներ",
+			"user": "Օգտատերեր",
+			"shop": "Խանութներ",
+			"category": "Կատեգորիաներ",
+			"product": "Ապրանքներ",
+			"import": "Ներբեռնել"
+		}
+	},
+	"loginForm": {
+		"title": "Մուտք գործել համակարգ",
+		"userName": "Մուտքանուն",
+		"password": "Գաղտնաբառ",
+		"loginBtn": "Մուտք",
+		"loggingInBtn": "Բեռնվում է․․․",
+		"usernamePlaceholder": "Լրացնել մուտքանունը",
+		"passwordPlaceholder": "Լրացնել գաղտնաբառը"
+	},
+
+	"user": {
+		"table": {
+			"tableTitle": "Գրանցված օգտատերեր",
+			"row": {
+				"name": "Անուն, ազգանուն",
+				"username": "Մուտքանուն",
+				"role": "Դերը",
+				"caption": "Օգտատերերի ցանկ"
+			}
+		},
+		"form": {
+			"addTitle": "Ավելացնել Օգտատեր",
+			"editTitle": "Խմբագրել օգտատիրոջ տվյալները",
+			"namePlaceholder": "Լրացնել անուն, ազգանուն",
+			"usernamePlaceholder": "Լրացնել մուտքանունը",
+			"userPassPlaceholder": "Լրացնել գաղտնաբառը",
+			"rolePlaceholder": "Ընտրել դերը",
+			"label": {
+				"name": "Անուն, ազգանուն",
+				"username": "Մուտքանուն",
+				"password": "Գաղտնաբառ"
+			},
+			"role": {
+				"admin": "Ադմին",
+				"manager": "Մենեջեր"
+			},
+
+			"saveBtn": "Պահպանել",
+			"savingBtn": "Մշակվում է․․․"
+		},
+		"error": {
+			"notFound": "Օգտատերը չի գտնվել",
+			"emailExists": "Այս էլ. փոստով օգտատեր արդեն գոյություն ունի",
+			"invalidRole": "Դերն անվավեր է",
+			"invalidStatus": "Կարգավիճակն անվավեր է",
+			"missingFields": "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը",
+			"invalidId": "Օգտատիրոջ անվավեր ID",
+			"cannotDeleteSelf": "Հնարավոր չէ ջնջել սեփական հաշիվը",
+			"cannotModifyAdmin": "Հնարավոր չէ փոփոխել ադմինի տվյալները",
+			"insufficientPermissions": "Չթույլատրված"
+		}
+	},
+	"shop": {
+		"table": {
+			"title": "Խանութների ցանկ",
+			"assign": "Կցել խանութ",
+			"row": {
+				"code": "Կոդ",
+				"name": "Անվանում",
+				"vat": "ՀՎՀՀ",
+				"phone": "Հեռախոս",
+				"address": "Հասցե",
+				"caption": "Խանութների ցանկ"
+			}
+		},
+
+		"form": {
+			"addTitle": "Ավելացնել խանութ",
+			"editTitle": "Խմբագրել տվյալները",
+			"namePH": "Լրացնել անվանում",
+			"codePH": "Լրացնել կոդը",
+			"addressPH": "Լրացնել հասցեն",
+			"phonePH": "Լրացնել Հեռախոսը",
+			"vatPH": "Լրացնել ՀՎՀՀ",
+			"label": {
+				"name": "Խանութի անվանում",
+				"code": "Խանութի կոդ",
+				"address": "Խանութի հասցե",
+				"phone": "Հեռախոս",
+				"vat": "ՀՎՀՀ",
+				"status": "Կարգավիճակ"
+			}
+		},
+		"assignedShopTitle": "Ընտրված խանութներ",
+
+		"error": {
+			"notFound": "Խանութը չի գտնվել",
+			"codeExists": "Կոդն արդեն գոյություն ունի",
+			"invalidStatus": "Անվավեր կարգավիճակ",
+			"missingFields": "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը",
+			"invalidId": "Անվավեր ID",
+			"invalidVat": "Անվավեր ՀՎՀՀ",
+			"invalidFileType": "Ֆայլի տեսակը սխալ է",
+			"validationError": "Տվյալների սխալ",
+			"emptyFile": "Ֆայլը դատարկ է",
+			"fileNotFound": "Ֆայլը չի գտնվել"
+		}
+	},
+
+	"category": {
+		"table": {
+			"title": "Կատեգորիաներ",
+
+			"row": {
+				"name": "Կատեգորիայի անվանումը",
+				"caption": "Կատեգորիաների ցանկ"
+			}
+		},
+		"form": {
+			"addTitle": "Ավելացնել կատեգորիա",
+			"editTitle": "Խմբագրել կատեգորիաները",
+			"namePlaceholder": "Լրացնել կատեգորիայի անվանումը",
+			"label": "Կատեգորիայի անվանում",
+			"categoryAll": "Բոլորը"
+		},
+		"error": {
+			"notFound": "Կատեգորիան չի գտնվել",
+			"invalidId": "Անվավեր ID",
+			"missingFields": "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը",
+			"parentNotFound": "Չի գտնվել",
+			"circularReference": "ԱՆվավեր հղում",
+			"cannotDeleteWithChildren": "Հնարավոր չէ ջնջել",
+			"cannotMoveToChild": "Հնարավոր չէ տեղափոխել"
+		}
+	},
+	"product": {
+		"byCategory": "Ընտրել ապրանք ըստ կատեգորիայի",
+		"table": {
+			"title": "Ապրանքներ",
+			"row": {
+				"name": "Ապրանքի անվանում",
+				"code": "Կոդ",
+				"measurement": "Չափման միավոր",
+				"price": "Գին",
+				"category": "Կատեգորիա"
+			}
+		},
+		"form": {
+			"addTitle": "Ավելացնել ապրանք",
+			"editTitle": "Խմբագրել ապրանքը",
+			"namePH": "Լրացնել անվանումը",
+			"codePH": "Լրացնել կոդը",
+			"categoryPH": "Ընտրել կատեգորիան",
+			"measureMentPH": "Ընտրել չափման միավորը",
+			"pricePH": "Լրացնել գինը",
+			"caption": "Ապրանքների ցանկ",
+			"label": {
+				"name": "Ապրանքի անվանումը",
+				"code": "Ապրանքի կոդ",
+				"category": "Կատեգորիան",
+				"measurement": "Չափման միավորը",
+				"price": "Գինը"
+			}
+		},
+		"measurement": {
+			"piece": "Կտոր",
+			"kg": "Կիլոգրամ",
+			"meter": "Մետր",
+			"liter": "Lիտր"
+		},
+		"error": {
+			"notFound": "Ապրանքը չի գտնվել",
+			"invalidId": "Ապրանքի անվավեր ID",
+			"missingFields": "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը",
+			"codeExists": "Այս կոդով ապրանք արդեն գոյություն ունի",
+			"invalidPrice": "Գինը պետք է լինի դրական թիվ",
+			"invalidMeasurement": "Անվավեր չափման միավոր",
+			"categoryNotFound": "Կատեգորիան չի գտնվել",
+			"validationError": "Ապրանքի տվյալները սխալ են մուտքագրված",
+			"emptyFile": "Ֆայլը դատարկ է",
+			"fileNotFound": "Ֆայլը չի գտնվել"
+		}
+	},
+
+	"auth": {
+		"error": {
+			"invalidCredentials": "Սխալ մուտքային տվյալներ",
+			"userInactive": "Ոչ ակտիվ",
+			"missingCredentials": "Ոչ ամբողջական տվյալներ",
+			"unauthorized": "Չթույլատրված մուտք",
+			"tokenMissing": "Սեսիան ավարտվել է",
+			"tokenInvalid": "Թերի տվյալներ"
+		}
+	},
+
+	"errors": {
+		"auth": {
+			"missingField": "Խնդրում ենք լրացնել բոլոր դաշտերը",
+			"passwordError": "Խնդրում ենք լրացնել դաշտը (առնվազն 8 նիշ)"
+		},
+		"users": {
+			"zod": {
+				"name": "Անուն, ազգանուն լրացնելը պարտադիր է",
+				"username": "Մուտքանունը պարտադիր է",
+				"role": "Ընտրեք դերը",
+				"status": "Կարգավիճակը պարտադիր է",
+				"passwordRequired": "Գաղտնաբառը պարտադիր է",
+				"passwordMin": "Գաղտնաբառը պետք է պարունակի արնվազն 8 նիշ"
+			}
+		},
+
+		"shops": {
+			"zod": {
+				"code": "Կոդը պարտադիր է",
+				"name": "Անվանումը պարտադիր է",
+				"address": "Հասցեն պարտադիր է",
+				"status": "Կարգավիճակը պարտադիր է"
+			}
+		},
+		"product": {
+			"zod": {
+				"name": "Անվանումը պարտադիր է",
+				"code": "Կոդը պարտադիր է",
+				"measurement": "Ընտրել չափման միավորը",
+				"category": "Ընտրել կատեգորիան",
+				"price": "Գինը պարտադիր է",
+				"positivePrice": "Գինը պետք է լինի դրական թիվ",
+				"priceType": "Պետք է լինի թիվ"
+			}
+		}
+	},
+	"import": {
+		"title": "Տվյալների ներբեռնում",
+		"userTitle": "Օգտատերեր",
+		"shopTitle": "Խանութներ",
+		"categoryTitle": "Կատեգորիաներ",
+		"productTitle": "Ապրանքներ",
+		"importBtn": "Ներբեռնել"
+	},
+
+	"order": {
+		"addBtn": "Ստեղծել նոր պատվեր",
+		"title": "Պատվերներ",
+		"previewTitle": "Դիտել պատվերը",
+		"categoryBtn": "Ընտրել այլ կատեգորիա",
+		"submitOrder": "Հաստատել պատվերը",
+		"productBtn": "Ապրանքներ",
+		"previewBtn": "Տեսնել պատվերը",
+		"assignedShops": "Խանութներ",
+		"increaseBtn": "Ավելացնել քանակը",
+		"decreaseBtn": "Պակասեցնել քանակը",
+		"noOrder": "Պատվերներ առկա չեն",
+		"filterByStatus": "Ֆիլտրել պատվերները",
+
+		"table": {
+			"name": "Խանութի անվանում",
+			"address": "Խանութի հասցե",
+			"caption": "Պատվերների ցանկ",
+			"total": "Ընդհանուր արժեք",
+			"date": "Գրանցման ամսաթիվ",
+			"managerName": "Մենեջերի անուն",
+			"number": "Պատվերի համար"
+		},
+
+		"filter": "Ֆիլտրել ըստ մենեջերի",
+
+		"popup": {
+			"title": "Գրանցել պատվեր",
+			"price": "Գին",
+			"quantity": "Քանակ",
+			"total": "Ընդամենը"
+		},
+		"details": {
+			"title": "Պատվերի մանրամասներ",
+			"number": "Պատվերի համար",
+			"code": "Ապրանքի կոդ",
+			"deleteBtn": "Ջնջել պատվերը"
+		},
+		"error": {
+			"notFound": "Պատվերը չի գտնվել",
+			"invalidId": "Անվավեր ID",
+			"missingFields": "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը",
+			"shopNotAssigned": "Խանութը կցված չէ",
+			"shopNotFound": "Խանութը չի գտնվել",
+			"shopInactive": "Խանութը կասեցված է",
+			"productNotFound": "Ապրանքը չի գտնվել",
+			"invalidQuantity": "Անվավեր քանակ",
+			"emptyItems": "Ապրանքների ցանկը դատարկ է",
+			"invalidStatus": "Անվավեր կարգավիճակ",
+			"cannotModifyStatus": "Հնարավոր չէ փոփոխել կարգավիճակը",
+			"unauthorizedShop": "Չթույլատրված"
+		}
+	},
+	"print": {
+		"payer": "Վճարող",
+		"createdAt": "Գրանցման ամսաթիվ",
+		"address": "Առաքման վայրը",
+		"vat": "ՀՎՀՀ",
+		"measurement": "Միավոր",
+		"preview": "Տպել",
+		"printed": "Տպված",
+		"delivered": "Առաքված",
+		"deliver": "Առաքել",
+		"markAsPrinted": "Նշել որպես տպված",
+		"new": "Նոր"
+	}
+}

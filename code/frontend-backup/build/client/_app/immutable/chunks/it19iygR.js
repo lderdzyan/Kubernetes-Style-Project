@@ -1,0 +1,1 @@
+import{z as c,w as _,x as o,A as T,T as d,U as b,V as y,I as A,B as E,H as f}from"./DiTrXzu_.js";function p(t,i,u=!1){_&&o();var r=new E(t),h=u?T:0;function n(a,s){if(_){const l=d(t)===b;if(a===l){var e=y();A(e),r.anchor=e,f(!1),r.ensure(a,s),f(!0);return}}r.ensure(a,s)}c(()=>{var a=!1;i((s,e=!0)=>{a=!0,n(e,s)}),a||n(!1,null)},h)}export{p as i};

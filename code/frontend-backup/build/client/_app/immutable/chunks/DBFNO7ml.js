@@ -1,0 +1,1 @@
+const e=[{key:"code",label:"shop.table.row.code"},{key:"name",label:"shop.table.row.name"},{key:"vat",label:"shop.table.row.vat"},{key:"phone",label:"shop.table.row.phone"},{key:"address",label:"shop.table.row.address"}],o=[{key:"name",label:"shop.table.row.name"},{key:"code",label:"shop.table.row.code"}];export{o as S,e as s};

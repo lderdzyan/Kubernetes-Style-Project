@@ -1,0 +1,1 @@
+var r=(a=>(a.ADMIN="admin",a.MANAGER="manager",a))(r||{});export{r as U};
