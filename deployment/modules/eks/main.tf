@@ -77,7 +77,7 @@ resource "aws_eks_node_group" "node_group" {
     min_size     = 1
     max_size     = 2
   }
-
+# scaling size has to be discussed
   depends_on = [
     aws_eks_cluster.cluster
   ]
