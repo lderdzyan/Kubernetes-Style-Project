@@ -29,3 +29,9 @@ module "ecr" {
 
   repositories = ["backend", "frontend"]
 }
+
+module "images" {
+  source = "./modules/images"
+  project_name = var.project_name
+  environment = var.environment
+}
