@@ -1,0 +1,57 @@
+name: Destroy Whole Infrastructure
+
+on: 
+  workflow_dispatch:
+    inputs:
+      instance:
+        type: choice
+        description: "Choose the instance"
+        required: true
+        default: "dev"
+        options:
+          - dev
+          - ua
+          - preprod
+          - prod
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  resolve-inputs:
+    name: Destroy Infrastructure
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.instance }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v4
+
+      - name: Assuming federated role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_FED_ROLE_ARN }}
+          role-session-name: KubeRole
+
+      - name: Initialize Backend
+        run: |
+          cd deployment
+          terraform init \
+            -backend-config="bucket=${{ secrets.STATE_BUCKET_NAME }}" \
+            -backend-config="key=${{ inputs.instance }}/terraform.tfstate" \
+            -backend-config="region=${{ vars.AWS_REGION }}" 
+
+      - name: Apply Terraform 
+        run: |
+          cd deployment
+          terraform destroy -auto-approve
+        env:
+          TF_VAR_aws_region: ${{ vars.AWS_REGION }}
+          TF_VAR_environment: ${{ inputs.instance }}
+          TF_VAR_project_name: ${{ vars.PROJECT_NAME }}
+
+          
