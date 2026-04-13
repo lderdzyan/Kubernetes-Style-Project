@@ -42,6 +42,25 @@ jobs:
             --region ${{ vars.AWS_REGION }} \
             --name ${{ vars.PROJECT_NAME }}-${{ inputs.instance }}-eks \
             --alias github-${{ inputs.instance }}
-            
+
       - name: Verify access
         run: kubectl get nodes
+
+      - name: Create Namespace
+        run: |
+          for ns in argocd backend frontend database; do
+            kubectl create namespace $ns --dry-run=client -o yaml | kubectl apply -f -
+          done
+          kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+      - name: Wait for ArgoCD to be ready
+        run: |
+          kubectl wait --for=condition=available deployment \
+            --all -n argocd --timeout=300s
+
+      - name: Apply ArgoCD  
+        run: |
+          kubectl apply -f ./gitops/argocd/argocd-config.yaml
+      
+      - name: Check
+        run: kubectl get pods -n argocd
