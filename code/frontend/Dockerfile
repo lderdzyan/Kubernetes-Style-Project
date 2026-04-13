@@ -42,7 +42,7 @@ EXPOSE 3000
 # Set environment to production
 ENV NODE_ENV=production
 ENV PORT=3000
-ENV PUBLIC_BASE_URL=http://195.250.79.137:3010
+ENV PUBLIC_BASE_URL=http://localhost:3010
 
 # Run the production server
 CMD ["node", "build/index.js"]
