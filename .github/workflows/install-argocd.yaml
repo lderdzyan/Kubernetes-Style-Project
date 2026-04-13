@@ -21,8 +21,8 @@ jobs:
     name: Install ArgoCD
     runs-on: ubuntu-latest
     environment: ${{ inputs.instance}}
-    steps:
 
+    steps:
       - name: Checkout repo
         uses: actions/checkout@v6       
 
@@ -43,19 +43,26 @@ jobs:
             --name ${{ vars.PROJECT_NAME }}-${{ inputs.instance }}-eks \
             --alias github-${{ inputs.instance }}
 
-      - name: Verify access
+      - name: Verify cluster access
         run: kubectl get nodes
 
       - name: Create Namespace
         run: |
-          kubectl delete namespace argocd
           kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
-          kubectl apply -n argocd \
-          -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.7/manifests/install.yaml
 
-      - name: Apply ArgoCD  
+      - name: Install ArgoCD
+        run: |
+          kubectl apply -n argocd \
+            -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.7/manifests/install.yaml
+
+      - name: Wait for ArgoCD
+        run: |
+          kubectl wait --for=condition=available deployment \
+            --all -n argocd --timeout=300s
+
+      - name: Apply ArgoCD Applications
         run: |
           kubectl apply -f ./gitops/argocd/argocd-config.yaml
-      
-      - name: Check
+
+      - name: Check pods
         run: kubectl get pods -n argocd
