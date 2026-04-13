@@ -51,7 +51,8 @@ jobs:
           for ns in argocd backend frontend database; do
             kubectl create namespace $ns --dry-run=client -o yaml | kubectl apply -f -
           done
-          kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+          kubectl apply -n argocd \
+          -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.7/manifests/install.yaml
 
       - name: Wait for ArgoCD to be ready
         run: |
