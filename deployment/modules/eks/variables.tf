@@ -20,7 +20,7 @@ variable "public_subnets" {
 
 variable "cluster_version" {
   type    = string
-  default = "1.30"
+  default = "1.31"
 }
 
 variable "node_instance_type" {

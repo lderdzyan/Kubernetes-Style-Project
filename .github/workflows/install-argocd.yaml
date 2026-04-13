@@ -1,0 +1,47 @@
+name: Install ArgoCD
+
+on:
+  workflow_dispatch:
+    inputs:
+      instance:
+        type: choice
+        required: true
+        options:
+          - dev
+          - ua
+          - preprod
+          - prod
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  install-argocd:
+    name: Install ArgoCD
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.instance}}
+    steps:
+
+      - name: Checkout repo
+        uses: actions/checkout@v6       
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_FED_ROLE_ARN }}
+          role-session-name: argocd-installation
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig \
+            --region ${{ vars.AWS_REGION }} \
+            --name ${{ vars.PROJECT_NAME }}-${{ inputs.instance }}-eks \
+            --alias github-${{ inputs.instance }}
+            
+      - name: Verify access
+        run: kubectl get nodes
