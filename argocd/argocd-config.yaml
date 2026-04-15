@@ -7,7 +7,7 @@ spec:
   description: Kubeproject environments (dev/staging/prod)
 
   sourceRepos:
-    - '*'
+    - https://github.com/lderdzyan/Kubernetes-Style-Project.git
 
   destinations:
     - namespace: dev

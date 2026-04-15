@@ -1,4 +1,4 @@
-name: Apply ArgoCD (GitOps Bootstrap)
+name: Apply ArgoCD 
 
 on:
   workflow_dispatch:
