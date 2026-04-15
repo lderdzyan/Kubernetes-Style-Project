@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-dev
+  namespace: argocd
+spec:
+  project: kubeproject
+
+  source:
+    repoURL: https://github.com/YOUR_ORG/kubeproject-deploy.git
+    targetRevision: dev
+    path: charts/backend
+    helm:
+      valueFiles:
+        - environments/dev/backend-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

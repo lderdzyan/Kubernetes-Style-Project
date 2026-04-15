@@ -1,0 +1,74 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-dev
+  namespace: argocd
+spec:
+  project: kubeproject
+
+  source:
+    repoURL: https://github.com/lderdzyan/Kubernetes-Style-Project.git
+    targetRevision: dev
+    path: charts/backend
+    helm:
+      valueFiles:
+        - environments/dev/backend-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-staging
+  namespace: argocd
+spec:
+  project: kubeproject
+
+  source:
+    repoURL: https://github.com/lderdzyan/Kubernetes-Style-Project.git
+    targetRevision: staging
+    path: charts/backend
+    helm:
+      valueFiles:
+        - environments/staging/backend-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-prod
+  namespace: argocd
+spec:
+  project: kubeproject
+
+  source:
+    repoURL: https://github.com/lderdzyan/Kubernetes-Style-Project.git
+    targetRevision: prod
+    path: charts/backend
+    helm:
+      valueFiles:
+        - environments/prod/backend-values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+
+syncPolicy:
+  syncOptions:
+    - CreateNamespace=true
