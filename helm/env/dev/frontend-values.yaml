@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: my-frontend
+  tag: dev-latest
+
+ingress:
+  enabled: false
+  host: dev.myapp.local
+
+env:
+  API_URL: http://localhost:3000

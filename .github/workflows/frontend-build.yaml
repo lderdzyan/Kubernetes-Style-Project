@@ -1,0 +1,73 @@
+name: Frontend CI
+
+on: 
+  pull_request:
+    branches:
+      - dev
+    types:
+      - closed
+    paths:
+      - "code/msinfraops-backend/code/**"
+      - "!code/msinfraops-backend/**/*.md"
+  push:
+    tags:
+      - "v*"
+      - "hotfix*"
+  workflow_dispatch:
+    inputs:
+      instance:
+        type: choice
+        description: "Choose the instance"
+        required: true
+        default: "dev"
+        options:
+          - dev
+          - staging
+          - prod
+env:
+  AWS_REGION: eu-north-1
+  ECR_REPOSITORY: frontend
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  build-and-push:
+    if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.instance }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assuming federated role
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ secrets.AWS_FED_ROLE_ARN }}
+          role-session-name: KubeRole
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG ./frontend
+
+      - name: Tag image
+        run: |
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG \
+          ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Push image to ECR
+        run: |
+          docker push ${{ steps.login-ecr.outputs.registry }}/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Update Helm values
+        run: |
+          sed -i "s/tag:.*/tag: $IMAGE_TAG/" envs/dev/frontend-values.yaml
+            
+      - name: Commiting Tag Change
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+            commit_message: "update frontend image to ${{ env.IMAGE_TAG }}"
+            file_pattern: helm/envs/${{inputs.instance}}/frontend-values.yaml

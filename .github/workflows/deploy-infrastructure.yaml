@@ -10,8 +10,7 @@ on:
         default: "dev"
         options:
           - dev
-          - ua
-          - preprod
+          - staging
           - prod
 
 permissions:

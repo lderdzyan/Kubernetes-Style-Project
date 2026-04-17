@@ -1,10 +1,20 @@
 name: Apply ArgoCD 
 
-on:
+on: 
   workflow_dispatch:
-
+    inputs:
+      instance:
+        type: choice
+        description: "Choose the instance"
+        required: true
+        default: "dev"
+        options:
+          - dev
+          - staging
+          - prod
 jobs:
   apply-argocd:
+    environment: ${{ inputs.instance }}
     runs-on: ubuntu-latest
 
     steps:
